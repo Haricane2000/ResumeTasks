@@ -1,0 +1,82 @@
+﻿<Window x:Class="Client.Views.CreateTournament"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.Views" 
+        xmlns:viewmodel="clr-namespace:Client.ViewModels"
+        mc:Ignorable="d"
+        Title="Добавление турнира" Height="550" Width="380" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <viewmodel:CreateTournamentViewModel />
+    </Window.DataContext>
+
+    <Grid Background="{StaticResource LightBrush}">
+
+            <StackPanel>
+                <Grid>
+                    <Border CornerRadius="5">
+                        <Border.OpacityMask>
+                            <VisualBrush>
+                                <VisualBrush.Visual>
+                                    <Border
+                                        Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        Background="Black"
+                                        CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        SnapsToDevicePixels="True" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Border.OpacityMask>
+
+                        <StackPanel HorizontalAlignment="Center" Margin="0 30 0 30">
+                            <Grid Background="{StaticResource MediumBrush}">
+                                <TextBlock Text="Добавление турнира" FontSize="28" HorizontalAlignment="Center" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Название:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}" Text="{Binding TournamentName,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[TournamentName]}"></TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="По какой игре:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                            <ComboBox Margin="15" ItemsSource="{Binding ShowedGame}" SelectedValue="{Binding SelectedGame}">
+                                
+                            </ComboBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Дата проведения:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                            <DatePicker Margin="15" SelectedDate="{Binding TDate}" DisplayDateStart="{Binding TDate}"></DatePicker>
+                            </Grid>
+
+                        <Grid Background="{StaticResource MediumBrush}" >
+                            <TextBlock Text="Призовой фонд, $:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                        </Grid>
+
+                        <Grid Background="{StaticResource DarkBrush}">
+                            <TextBox Margin="10" Style="{StaticResource BaseTextBox}" Text="{Binding TPrize,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[TPrize]}"></TextBox>
+                        </Grid>
+
+                        <Grid Background="{StaticResource MediumBrush}">
+
+                                <Button MinWidth="100" Margin="10" HorizontalAlignment="Center" Content="Добавить" Style="{StaticResource BaseButton}" Command="{Binding CreateTournament}"></Button>
+
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+</Window>

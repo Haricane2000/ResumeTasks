@@ -1,0 +1,146 @@
+﻿<Window x:Class="Client.Views.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.Views" 
+        xmlns:viewmodel="clr-namespace:Client.ViewModels"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="700" Width="450" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <viewmodel:RegistrationViewModel />
+    </Window.DataContext>
+
+  
+
+
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+
+                <Grid >
+                    <Button MinWidth="100" Margin="10" HorizontalAlignment="Center" Content="Назад" Style="{StaticResource BaseButton}" Command="{Binding Back}"></Button>
+                </Grid>
+                
+                <Grid>
+                    <Border CornerRadius="5">
+                        <Border.OpacityMask>
+                            <VisualBrush>
+                                <VisualBrush.Visual>
+                                    <Border
+                                        Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        Background="Black"
+                                        CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource AncestorType=Border}}"
+                                        SnapsToDevicePixels="True" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Border.OpacityMask>
+
+                        <StackPanel HorizontalAlignment="Center" Margin="0 10 0 30">
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <StackPanel>
+                                <TextBlock Text="Регистрация" FontSize="28" HorizontalAlignment="Center" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                                <TextBlock Text="Логин:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}" Text="{Binding Login, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[Login], UpdateSourceTrigger=PropertyChanged}">
+                                    
+                                </TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Пароль:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                               
+
+                            <PasswordBox Style="{StaticResource BasePasswordBox}" viewmodel:PasswordHelper.Attach="True" 
+                                    viewmodel:PasswordHelper.Password="{Binding Password, Mode=TwoWay, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[Password]}" 
+                                    Margin="10"/>
+                                    
+                                
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Имя:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}" Text="{Binding Name, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[Name],UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Фамилия:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}"  Text="{Binding SecondName, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[SecondName]}" ></TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Отчество:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}"  Text="{Binding Patronymic,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[Patronymic]}"></TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Дата рождения:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <DatePicker Margin="10"  SelectedDate="{Binding BirthYear}" DisplayDateStart="{Binding nowdate}">
+                                    
+                                </DatePicker>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Email:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <TextBox Margin="10" Style="{StaticResource BaseTextBox}"  Text="{Binding Email, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[Email],UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Номер телефона:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="+375" Style="{StaticResource BaseText}" Margin="5 15 0 15" FontSize="18"></TextBlock>
+                                <TextBox MinWidth="270" Margin="10" Style="{StaticResource BaseTextBox}"  Text="{Binding PhoneNumber, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ErrorCollection[PhoneNumber]}"></TextBox>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}" >
+                                <TextBlock Text="Права:" HorizontalAlignment="Left" Margin="10" Style="{StaticResource BaseText}"></TextBlock>
+                            </Grid>
+
+                            <Grid Background="{StaticResource DarkBrush}">
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <RadioButton GroupName="Rank" Content="Игрок" Margin="30 10" CommandParameter="0" Command="{Binding GetRank}"></RadioButton>
+                                    <RadioButton GroupName="Rank" Content="Администратор" Margin="30 10" CommandParameter="1" Command="{Binding GetRank}"></RadioButton>
+                                </WrapPanel>
+                            </Grid>
+
+                            <Grid Background="{StaticResource MediumBrush}">
+                                <Button Style="{StaticResource BaseButton}" MinWidth="100" Margin="120 10" HorizontalAlignment="Center" Content="Регистрация"  Command="{Binding Registration}" >
+                                    
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</Window>

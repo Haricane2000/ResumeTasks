@@ -1,0 +1,10 @@
+E:\IsSoft\Homeworks\8th homework\DB\bin\Debug\DB.dacpac
+E:\IsSoft\Homeworks\8th homework\DB\bin\Debug\DB.dll
+E:\IsSoft\Homeworks\8th homework\DB\bin\Debug\DB.pdb
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\DB.sqlprojAssemblyReference.cache
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\Model.xml
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\refactor.xml
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\postdeploy.sql
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\predeploy.sql
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\DB.dll
+E:\IsSoft\Homeworks\8th homework\DB\obj\Debug\DB.pdb

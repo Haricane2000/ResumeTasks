@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Client.ViewModels.AdministratorViewModel" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAgAAAAAAAAAAIAAABCAAAIEgAAKQBgAEJAKAI=</HashCode>
+      <FileName>ViewModels\AdministratorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.BaseViewModel">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.SingleUser" Collapsed="true">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAEAgAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.PasswordHelper" Collapsed="true">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAIQAgEBAEAAAAAAIAAABAAAAAAgAAAICA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateCommandViewModel" Collapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAgYAACAAEAAICAAAAAIAAQAAAAAIQAAA=</HashCode>
+      <FileName>ViewModels\CreateCommandViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.CreateGameViewModel" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQQAAEAgAAQAACAACAAEAAAAEAAEAAAAhAAAAAAA=</HashCode>
+      <FileName>ViewModels\CreateGameViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.CreateSponsorAdminViewModel" Collapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\CreateSponsorAdminViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateSponsorViewModel" Collapsed="true">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CreateSponsorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateTournamentViewModel" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Client.ViewModels.BaseViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.305" />
+        <Point X="8.75" Y="2.453" />
+        <Point X="7.976" Y="2.453" />
+        <Point X="7.976" Y="5.068" />
+        <Point X="6" Y="5.068" />
+        <Point X="6" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIQCSAAECgAAwAACAAJAAAAAAAAAAAAAAAAAgAYAAA=</HashCode>
+      <FileName>ViewModels\CreateTournamentViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Client.ViewModels.BaseViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.305" />
+        <Point X="8.75" Y="2.504" />
+        <Point X="7.941" Y="2.504" />
+        <Point X="7.941" Y="5.06" />
+        <Point X="7.75" Y="5.06" />
+        <Point X="7.75" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABQAAAAACAgAAQAAKAAAAAAAAAAAAAACAAAQIAAEAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.PlayerViewModel" Collapsed="true">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Client.ViewModels.BaseViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.305" />
+        <Point X="8.75" Y="2.479" />
+        <Point X="7.953" Y="2.479" />
+        <Point X="7.953" Y="5.048" />
+        <Point X="9.5" Y="5.048" />
+        <Point X="9.5" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QCAAAAAgAAAAAAAAQAIAAABCAAAIEgAAKwBgAEIAKAo=</HashCode>
+      <FileName>ViewModels\PlayerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.RegistrationViewModel" Collapsed="true">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="Client.ViewModels.BaseViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="2.305" />
+        <Point X="8.75" Y="2.479" />
+        <Point X="7.947" Y="2.479" />
+        <Point X="7.947" Y="5.052" />
+        <Point X="11.25" Y="5.052" />
+        <Point X="11.25" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ARQBJCmIACgAAQACCQAAQAUAAAAAAAACAIBQIAAUQAE=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.Administrator" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Administrator.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.CreateCommand" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateCommand.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.CreateGame" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateGame.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.CreateSponsor" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateSponsor.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.CreateSponsorAdmin" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateSponsorAdmin.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.CreateTournament" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateTournament.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Commands.RelayCommand">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.Login" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.Player" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Player.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Views.Registration" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Registration.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

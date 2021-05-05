@@ -1,0 +1,70 @@
+﻿<Page x:Class="Client.Pages.AdminTournament"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client.Pages" 
+      xmlns:viewmodel="clr-namespace:Client.PagesViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminTournament">
+
+    <Page.DataContext>
+        <viewmodel:AdminTournamentViewModel />
+    </Page.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource MediumBaseBrush}">
+            <StackPanel
+                    Margin="-2,0,0,0"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                <Button Style="{StaticResource BaseButton}" Command="{Binding CreateTournament}">
+                    <ContentControl Height="50" Content="{StaticResource PlusIcon1}" />
+                </Button>
+
+                <Button
+                        Margin="-2,0,0,0"
+                        Style="{StaticResource BaseButton}" Command="{Binding MemberList}">
+                    <ContentControl Height="50" Content="{StaticResource list}" />
+                </Button>
+                <Button
+                        Margin="-2,0,0,0"
+                        Command="{Binding RefreshTournament}"
+                        Style="{StaticResource BaseButton}">
+                    <ContentControl Height="43" Content="{StaticResource Refresh}"/>
+                </Button>
+                <Button
+                        Margin="-2,0,0,0"
+                        Style="{StaticResource BaseButton}" Command="{Binding DeleteTournament}">
+                    <ContentControl Height="50" Content="{StaticResource TrashIcon}" />
+                </Button>
+
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBox Margin="5 15" Width="170" Style="{StaticResource BaseTextBox}" Text="{Binding SearchString}"></TextBox>
+                <Button Content="Поиск" Margin="10 15" Style="{StaticResource BaseButton}" Command="{Binding SearchCommand}"></Button>
+
+            </StackPanel>
+
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <DataGrid IsReadOnly="True" MinColumnWidth="142" MinRowHeight="30" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Margin="5" ItemsSource="{Binding ShowedTournaments, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTournament, UpdateSourceTrigger=PropertyChanged}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding TName}" Header="Название"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Game}" Header="Игра"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Date, StringFormat =yyyy-MM-dd}" Header="Дата проведения"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Prize}" Header="Призовой фонд, $"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище CyberModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Commands">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="Title" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MaxSize" Type="int" />
+          <Property Name="Admin" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Games">
+          <Key>
+            <PropertyRef Name="GameName" />
+          </Key>
+          <Property Name="GameName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Year" Type="date" />
+          <Property Name="GameType" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NCommand" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="NTournament" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Confirm" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rank">
+          <Key>
+            <PropertyRef Name="RankId" />
+          </Key>
+          <Property Name="RankId" Type="int" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tournaments">
+          <Key>
+            <PropertyRef Name="TName" />
+          </Key>
+          <Property Name="TName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Game" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Prize" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Paasword" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="SecondName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="15" />
+          <Property Name="BirthYear" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="Command" Type="nvarchar" MaxLength="5" />
+          <Property Name="URank" Type="int" />
+        </EntityType>
+        <Association Name="Admin_To_Login">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Login" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NCommand_To_Command">
+          <End Role="Commands" Type="Self.Commands" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commands">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="NCommand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NTourn_To_Tourn">
+          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="TName" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="NTournament" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TGame_To_Game">
+          <End Role="Games" Type="Self.Games" Multiplicity="1" />
+          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="GameName" />
+            </Principal>
+            <Dependent Role="Tournaments">
+              <PropertyRef Name="Game" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserCommand_To_Command">
+          <End Role="Commands" Type="Self.Commands" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commands">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Command" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRank_To_Rank">
+          <End Role="Rank" Type="Self.Rank" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="RankId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="URank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CyberModelContainer">
+          <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Games" EntityType="Self.Games" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rank" EntityType="Self.Rank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Admin_To_Login" Association="Self.Admin_To_Login">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="NCommand_To_Command" Association="Self.NCommand_To_Command">
+            <End Role="Commands" EntitySet="Commands" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="NTourn_To_Tourn" Association="Self.NTourn_To_Tourn">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="TGame_To_Game" Association="Self.TGame_To_Game">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Tournaments" EntitySet="Tournaments" />
+          </AssociationSet>
+          <AssociationSet Name="UserCommand_To_Command" Association="Self.UserCommand_To_Command">
+            <End Role="Commands" EntitySet="Commands" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UserRank_To_Rank" Association="Self.UserRank_To_Rank">
+            <End Role="Rank" EntitySet="Rank" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CyberModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Command">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="Title" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaxSize" Type="Int32" />
+          <Property Name="Admin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.Admin_To_Login" FromRole="Commands" ToRole="Users" />
+          <NavigationProperty Name="Members" Relationship="Self.NCommand_To_Command" FromRole="Commands" ToRole="Members" />
+          <NavigationProperty Name="Users" Relationship="Self.UserCommand_To_Command" FromRole="Commands" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameName" />
+          </Key>
+          <Property Name="GameName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="DateTime" Precision="0" />
+          <Property Name="GameType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tournaments" Relationship="Self.TGame_To_Game" FromRole="Games" ToRole="Tournaments" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NCommand" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NTournament" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Command" Relationship="Self.NCommand_To_Command" FromRole="Members" ToRole="Commands" />
+          <NavigationProperty Name="Tournament" Relationship="Self.NTourn_To_Tourn" FromRole="Members" ToRole="Tournaments" />
+          <Property Name="Confirm" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rank">
+          <Key>
+            <PropertyRef Name="RankId" />
+          </Key>
+          <Property Name="RankId" Type="Int32" Nullable="false" />
+          <Property Name="Rank1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.UserRank_To_Rank" FromRole="Rank" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tournament">
+          <Key>
+            <PropertyRef Name="TName" />
+          </Key>
+          <Property Name="TName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Game" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Prize" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Game1" Relationship="Self.TGame_To_Game" FromRole="Tournaments" ToRole="Games" />
+          <NavigationProperty Name="Members" Relationship="Self.NTourn_To_Tourn" FromRole="Tournaments" ToRole="Members" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Login" />
+          </Key>
+          <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Paasword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BirthYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Command" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="URank" Type="Int32" />
+          <NavigationProperty Name="Commands" Relationship="Self.Admin_To_Login" FromRole="Users" ToRole="Commands" />
+          <NavigationProperty Name="Command1" Relationship="Self.UserCommand_To_Command" FromRole="Users" ToRole="Commands" />
+          <NavigationProperty Name="Rank" Relationship="Self.UserRank_To_Rank" FromRole="Users" ToRole="Rank" />
+        </EntityType>
+        <Association Name="Admin_To_Login">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Command" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Login" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NCommand_To_Command">
+          <End Role="Commands" Type="Self.Command" Multiplicity="1" />
+          <End Role="Members" Type="Self.Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commands">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="NCommand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserCommand_To_Command">
+          <End Role="Commands" Type="Self.Command" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commands">
+              <PropertyRef Name="Title" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Command" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TGame_To_Game">
+          <End Role="Games" Type="Self.Game" Multiplicity="1" />
+          <End Role="Tournaments" Type="Self.Tournament" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="GameName" />
+            </Principal>
+            <Dependent Role="Tournaments">
+              <PropertyRef Name="Game" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NTourn_To_Tourn">
+          <End Role="Tournaments" Type="Self.Tournament" Multiplicity="1" />
+          <End Role="Members" Type="Self.Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="TName" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="NTournament" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRank_To_Rank">
+          <End Role="Rank" Type="Self.Rank" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="RankId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="URank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CyberContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Commands" EntityType="Self.Command" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Ranks" EntityType="Self.Rank" />
+          <EntitySet Name="Tournaments" EntityType="Self.Tournament" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="Admin_To_Login" Association="Self.Admin_To_Login">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="NCommand_To_Command" Association="Self.NCommand_To_Command">
+            <End Role="Commands" EntitySet="Commands" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="UserCommand_To_Command" Association="Self.UserCommand_To_Command">
+            <End Role="Commands" EntitySet="Commands" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="TGame_To_Game" Association="Self.TGame_To_Game">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Tournaments" EntitySet="Tournaments" />
+          </AssociationSet>
+          <AssociationSet Name="NTourn_To_Tourn" Association="Self.NTourn_To_Tourn">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="UserRank_To_Rank" Association="Self.UserRank_To_Rank">
+            <End Role="Rank" EntitySet="Ranks" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CyberModelContainer" CdmEntityContainer="CyberContext">
+          <EntitySetMapping Name="Commands">
+            <EntityTypeMapping TypeName="CyberModel.Command">
+              <MappingFragment StoreEntitySet="Commands">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="MaxSize" ColumnName="MaxSize" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="CyberModel.Game">
+              <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="GameType" ColumnName="GameType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="CyberModel.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="Confirm" ColumnName="Confirm" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NCommand" ColumnName="NCommand" />
+                <ScalarProperty Name="NTournament" ColumnName="NTournament" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ranks">
+            <EntityTypeMapping TypeName="CyberModel.Rank">
+              <MappingFragment StoreEntitySet="Rank">
+                <ScalarProperty Name="RankId" ColumnName="RankId" />
+                <ScalarProperty Name="Rank1" ColumnName="Rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tournaments">
+            <EntityTypeMapping TypeName="CyberModel.Tournament">
+              <MappingFragment StoreEntitySet="Tournaments">
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="Game" ColumnName="Game" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CyberModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Paasword" ColumnName="Paasword" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="BirthYear" ColumnName="BirthYear" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Command" ColumnName="Command" />
+                <ScalarProperty Name="URank" ColumnName="URank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

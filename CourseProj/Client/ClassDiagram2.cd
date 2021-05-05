@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Client.Command" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABACAAAAAAAMAAAAAAAQAAAAAAAAAAAgAEAAAAAAA=</HashCode>
+      <FileName>Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.CyberContext" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAiAAAAAAAAAAAAAAAAAAEgAAAAAAAAAEAAAAEAA=</HashCode>
+      <FileName>Sport.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Game" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAABAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAAEAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Member" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAAAAAQAAAAAAAABAAAAAAAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.BaseViewModel">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.CreateCommandViewModel" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAgYAACAAEAAICAAAAAIAAQAAAAAIQAAA=</HashCode>
+      <FileName>ViewModels\CreateCommandViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="8.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Client.ViewModels.AdministratorViewModel" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAgAAAAAAAAAAIAAABCAAAIEgAAKQBgAEJAKAI=</HashCode>
+      <FileName>ViewModels\AdministratorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateGameViewModel" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQQAAEAgAAQAACAACAAEAAAAEAAEAAAAhAAAAAAA=</HashCode>
+      <FileName>ViewModels\CreateGameViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.CreateSponsorAdminViewModel" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModels\CreateSponsorAdminViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateSponsorViewModel" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CreateSponsorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.CreateTournamentViewModel" Collapsed="true">
+    <Position X="14.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQCSAAECgAAwAACAAJAAAAAAAAAAAAAAAAAgAYAAA=</HashCode>
+      <FileName>ViewModels\CreateTournamentViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="17" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAACAgAAQAAKAAAAAAAAAAAAAACAAAQIAAEAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.ViewModels.PlayerViewModel" Collapsed="true">
+    <Position X="19.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAAAgAAAAAAAAQAIAAABCAAAIEgAAKwBgAEIAKAo=</HashCode>
+      <FileName>ViewModels\PlayerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.ViewModels.RegistrationViewModel" Collapsed="true">
+    <Position X="21.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARQBJCmIACgAAQACCQAAQAUAAAAAAAACAIBQIAAUQAE=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.PagesViewModels.AdminCommandsViewModel" Collapsed="true">
+    <Position X="23.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAgAA=</HashCode>
+      <FileName>PagesViewModels\AdminCommandsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.AdminGamesViewModel" Collapsed="true">
+    <Position X="21.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICABAAAAAQgAAAgAAKAAAAAAAgAEEAAAAAAiAIAAA=</HashCode>
+      <FileName>PagesViewModels\AdminGamesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.AdminProfileViewModel" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABJCiAQCAAAAAAAAAAQAQAAAAAAAAAAIAQIAAAAAE=</HashCode>
+      <FileName>PagesViewModels\AdminProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.AdminTournamentViewModel" Collapsed="true">
+    <Position X="17" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACACYAAAAIQgABAAAAAAABIAAAAAEEAAAAAoCAAAAA=</HashCode>
+      <FileName>PagesViewModels\AdminTournamentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.AllComandsUserViewModel1" Collapsed="true">
+    <Position X="19.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQgAAAgBAEAAAQAAAQAkAAQQAAAiAAgAA=</HashCode>
+      <FileName>PagesViewModels\AllComandsUserViewModel1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.GamesUserViewModel" Collapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>PagesViewModels\GamesUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.MyCommandViewModel" Collapsed="true">
+    <Position X="14.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAA0AIAAAABAAAAAAAAAACAAAAAAAACAAAABACAAAgA=</HashCode>
+      <FileName>PagesViewModels\MyCommandViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.UserProfileViewModel" Collapsed="true">
+    <Position X="17" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABJCiAQCBAAAAAAAAAQAQAAAAAAAAAAIARIBIAAAE=</HashCode>
+      <FileName>PagesViewModels\UserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.PagesViewModels.UserTournamentViewModel" Collapsed="true">
+    <Position X="19.25" Y="9" Width="1.5" />
+    <InheritanceLine Type="Client.ViewModels.BaseViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="11.75" Y="2.555" />
+        <Point X="11.75" Y="3.147" />
+        <Point X="14.536" Y="3.147" />
+        <Point X="14.536" Y="4.726" />
+        <Point X="14.474" Y="4.726" />
+        <Point X="14.474" Y="8.625" />
+        <Point X="20" Y="8.625" />
+        <Point X="20" Y="9" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAAIAAAAIQgABAAAACAABACAAAAEEAAAAAoCAAAAA=</HashCode>
+      <FileName>PagesViewModels\UserTournamentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Rank" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAAAAA=</HashCode>
+      <FileName>Rank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Tournament" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAABAAAAAAgEAAABAAAEAAAAAAA=</HashCode>
+      <FileName>Tournament.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.User" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAmiAACAAAAAAAAAARAAAAAAAAAACAAQQAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
